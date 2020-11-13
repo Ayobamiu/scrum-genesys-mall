@@ -1,5 +1,6 @@
 import React from 'react';
 import { usePaystackPayment } from 'react-paystack';
+import { Redirect } from 'react-router-dom';
 
   
 const config = {
@@ -11,8 +12,7 @@ const config = {
 
 const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
-  console.log("bbbbhhbbv")
-  window.location = '/thank-you'
+{/* <Redirect to='/thank-you'/>  */}
     console.log(reference);
   };
 
