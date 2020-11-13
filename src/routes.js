@@ -6,18 +6,19 @@ import Checkout from "./components/Checkout";
 import PaymentOptions from "./components/PaymentOptions";
 import ProductDetail from "./components/ProductDetail";
 import ProductsList from "./components/ProductsList";
+import ThankYou from "./components/ThankYou";
 
 class MainRoutes extends Component {
   state = {};
   render() {
     return (
       <Switch>
-        <Route path="/pay" component={PaymentOptions} />
+        <Route path="/thank-you" component={ThankYou} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/cart" component={Cart} />
         <Route path="/products" component={ProductsList} />
-        <Route path="/product" component={ProductDetail} />
-        <Route path="/" exact component={Categories} />
+        <Route path="/product/:id" component={ProductDetail} />
+        <Route path="/" exact component={ProductsList} />
       </Switch>
     );
   }

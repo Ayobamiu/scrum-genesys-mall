@@ -1,47 +1,57 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import image_11 from "../images/image 11.png";
+import { getProdct, getProdcts } from "../services/ProductServices";
 
 class ProductDetail extends Component {
-  state = {};
+  state = { product: {} };
+  componentDidMount() {
+    const Id = this.props.match.params.id;
+    const product = getProdct(Number(Id));
+    this.setState({
+      product,
+    });
+  }
+
   render() {
+    const product = this.state.product;
     return (
       <div className="product-details-page">
         <div className="product-details-page-head">
-          <strong>Laptops >> </strong> Notebook 15 Intel Core I3 Laptop 15.6
-          Inch 12GB RAM 1TB HDD
+          <strong>Laptops >> </strong> {product.name}
         </div>
         <div className="product-details-page-main">
           <div className="product-details-page-main-image">
-            <img src={image_11} height="100%" alt="" />
+            <img src={product.image} height="100%" alt="" />
           </div>
           <div className="product-details-page-main-details-and-button">
             <div className="product-details-page-main-details">
               <h1 className="product-details-page-main-details-head">
-                Hp Notebook 15 Intel Core I3 Laptop 15.6 Inch 12GB RAM 1TB HDD
+                {product.name}
               </h1>
               <p className="product-details-page-main-details-para">
-                Brand: Hp | Similar products from Hp
+                Brand: {product.brand} | Similar products from {product.brand}
               </p>
 
               <h1 className="product-details-page-main-details-price">
-                ₦ 217,000
+                ₦ {product.price}
               </h1>
               <p className="product-details-page-main-details-view-more">
                 View more
               </p>
             </div>
-            <div className="product-details-page-main-button">
+            <Link to="/cart" className="product-details-page-main-button">
               <i className="fa fa-shopping-cart"></i>
               <p className="product-details-page-main-button-text">
                 Add To Cart
               </p>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="product-details-page-sub">
           <div className="product-details-page-sub-key-features">
             <div className="product-details-page-sub-key-features-image">
-              <img src={image_11} height="100%" alt="" />
+              <img src={product.image} height="100%" alt="" />
             </div>
             <div className="product-details-page-sub-key-features-text">
               <h4 className="product-details-page-sub-key-features-text-head">
