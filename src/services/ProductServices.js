@@ -22,7 +22,7 @@ const products = [
     id: 3,
     name: "Mtk High Quality 10.1 Inch Android 6.0 Netbook Computer Laptop",
     brand: "Netbook",
-    price: "54,999",
+    price: "217,000",
     image: image_24,
   },
   {

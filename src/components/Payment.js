@@ -6,13 +6,14 @@ import { Redirect } from 'react-router-dom';
 const config = {
     reference: (new Date()).getTime(),
     email: "udeh.ifechi@gmail.com",
-    amount: 20000,
+    amount: 217000000,
     publicKey: 'pk_test_9df5ae8ad70f871d7a51666d29a8c712e33cb4e7',
 };
 
 const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
 {/* <Redirect to='/thank-you'/>  */}
+return <Redirect to='/thank-you'  />
     console.log(reference);
   };
 
