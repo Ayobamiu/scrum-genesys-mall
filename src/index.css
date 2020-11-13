@@ -376,6 +376,7 @@ code {
   color: white;
   border: none;
   font-size: 24px;
+  border-radius: 11px;
 }
 
 /* ---- checkout-form ---- */
@@ -402,6 +403,10 @@ code {
   align-items: flex-start;
   margin: 20px;
 }
+.checkout-form-input label {
+  padding-bottom: 6px;
+ }
+
 .checkout-form-input-inp {
   width: 80%;
   height: 50px;
