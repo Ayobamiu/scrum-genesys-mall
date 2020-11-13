@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import image_12 from "../images/image 12.png";
 
 class Cart extends Component {
@@ -49,12 +50,12 @@ class Cart extends Component {
           </p>
         </div>
         <div className="cart-call-to-action">
-          <button className="cart-call-to-action-btn-green">
+          <Link to='/' className="cart-call-to-action-btn-green">
             Continue Shopping
-          </button>
-          <button className="cart-call-to-action-btn-white">
+          </Link>
+          <Link to='/checkout' className="cart-call-to-action-btn-white">
             Proceed to Checkout
-          </button>
+          </Link>
         </div>
       </div>
     );

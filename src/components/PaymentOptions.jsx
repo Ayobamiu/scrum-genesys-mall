@@ -6,7 +6,9 @@ class PaymentOptions extends Component {
     return (
       <div className="payment-options">
         <aside className="payment-options-aside">
-          <div className="payment-options-aside-item">Pay With</div>
+          <div className="payment-options-aside-item">
+            <strong>PAY WITH</strong>
+          </div>
           <div className="payment-options-aside-item">
             <i className="fa fa-credit-card"></i>
             <p className="payment-options-aside-item-para">Card</p>
@@ -29,15 +31,43 @@ class PaymentOptions extends Component {
           </div>
         </aside>
         <main className="payment-options-main">
-          <i className="fa fa-facebook"></i>
-          <h1>Enter Your Card Details To Pay</h1>
-          <div className="checkout-form-input">
+          <div className="payment-options-main-icon">
+            <i className="fa fa-paypal fa-2x"></i>
+          </div>
+          <h1 className="payment-options-main-heading">
+            Enter Your Card Details To Pay
+          </h1>
+          <div className="payment-form-input">
             <label htmlFor="address">Zip Code (Optional)</label>
             <input
-              className="checkout-form-input-inp"
+              className="payment-form-input-inp"
               type="text"
               id="address"
             />
+          </div>
+          <div className="payment-form-input-small">
+            <label htmlFor="address">Zip Code (Optional)</label>
+            <input
+              className="payment-form-input-inp"
+              type="text"
+              id="address"
+            />
+          </div>
+          <div className="payment-form-input-small">
+            <label htmlFor="address">Zip Code (Optional)</label>
+            <input
+              className="payment-form-input-inp"
+              type="text"
+              id="address"
+            />
+          </div>
+          <div className="cart-call-to-action">
+            <button className="cart-call-to-action-btn-green">
+              Continue Shopping
+            </button>
+            <button className="cart-call-to-action-btn-white">
+              Proceed to payment
+            </button>
           </div>
         </main>
       </div>

@@ -8,6 +8,14 @@ class Checkout extends Component {
         <div className="checkout-heading">Billing Information</div>
         <div className="checkout-form">
           <div className="checkout-form-input">
+            <label htmlFor="address">Email</label>
+            <input
+              className="checkout-form-input-inp"
+              type="email"
+              id="email"
+            />
+          </div>
+          <div className="checkout-form-input">
             <label htmlFor="address">Address</label>
             <input
               className="checkout-form-input-inp"
@@ -42,7 +50,7 @@ class Checkout extends Component {
         </div>
         <div className="cart-call-to-action">
           <button className="cart-call-to-action-btn-green">
-            Continue Shopping
+            Pay on Delivery
           </button>
           <PaystackHookExample/>
         </div>
@@ -50,5 +58,4 @@ class Checkout extends Component {
     );
   }
 }
-
 export default Checkout;
