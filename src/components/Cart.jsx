@@ -4,10 +4,12 @@ import image_12 from "../images/image 12.png";
 
 class Cart extends Component {
   state = {};
+  
   render() {
+    let itemNo = Number(localStorage.getItem('ItemInCart'));
     return (
       <div className="cart">
-        <div className="medium-heading">Cart (1 Item)</div>
+        <div className="medium-heading">Cart ({itemNo} Item)</div>
         <table className="cart-table">
           <thead>
             <th>ITEM</th>

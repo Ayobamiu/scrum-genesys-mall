@@ -4,16 +4,39 @@ import image_11 from "../images/image 11.png";
 import { getProdct, getProdcts } from "../services/ProductServices";
 
 class ProductDetail extends Component {
-  state = { product: {} };
+  state = {
+    product: {},
+    cart: null  
+  };
   componentDidMount() {
     const Id = this.props.match.params.id;
     const product = getProdct(Number(Id));
+    const cart = JSON.parse(localStorage.getItem('cart'))
     this.setState({
       product,
+      cart
     });
+    // this.cart = localStorage.get('cart')
   }
-
+  
+   addProductToCart = () => {
+     let currentCart = this.state.cart
+     currentCart.push(this.state.product.id)
+     localStorage.setItem('cart', JSON.stringify(currentCart));
+     this.updateCartIcon()
+   }
+  updateCartIcon = ()=>{
+    let itemNo = Number(localStorage.getItem('ItemInCart'));
+    // add 1 to no of itm
+    let noOfItemsInCart =  Number(itemNo) + 1;
+    // update the dom
+    document.getElementById('cartItems').textContent = noOfItemsInCart
+    //set the local storage
+    localStorage.setItem('ItemInCart', noOfItemsInCart);
+  }
+  
   render() {
+    
     const product = this.state.product;
     return (
       <div className="product-details-page">
@@ -40,12 +63,13 @@ class ProductDetail extends Component {
                 View more
               </p>
             </div>
-            <Link to="/cart" className="product-details-page-main-button">
+            
+            <div to="#" className="product-details-page-main-button">
               <i className="fa fa-shopping-cart"></i>
-              <p className="product-details-page-main-button-text">
+              <p className="product-details-page-main-button-text" onClick={this.addProductToCart}>
                 Add To Cart
               </p>
-            </Link>
+            </div>
           </div>
         </div>
         <div className="product-details-page-sub">
@@ -97,5 +121,6 @@ class ProductDetail extends Component {
     );
   }
 }
+
 
 export default ProductDetail;
