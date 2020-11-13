@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PaystackHookExample from './Payment'
 class Checkout extends Component {
   state = {};
   render() {
@@ -43,9 +44,7 @@ class Checkout extends Component {
           <button className="cart-call-to-action-btn-green">
             Continue Shopping
           </button>
-          <button className="cart-call-to-action-btn-white">
-            Proceed to Checkout
-          </button>
+          <PaystackHookExample/>
         </div>
       </div>
     );

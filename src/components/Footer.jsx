@@ -19,10 +19,10 @@ class Footer extends Component {
               <i className="fa fa-facebook"></i>
             </div>
             <div className="footer-social-link">
-              <i className="fa fa-facebook"></i>
+              <i className="fa fa-instagram"></i>
             </div>
             <div className="footer-social-link">
-              <i className="fa fa-facebook"></i>
+              <i className="fa fa-twitter"></i>
             </div>
           </div>
         </div>
