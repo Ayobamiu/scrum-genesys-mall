@@ -22,7 +22,7 @@ const products = [
     id: 3,
     name: "Mtk High Quality 10.1 Inch Android 6.0 Netbook Computer Laptop",
     brand: "Netbook",
-    price: "217,000",
+    price: "21,700",
     image: image_24,
   },
   {
@@ -47,9 +47,6 @@ const products = [
     image: image_27,
   },
 ];
-
-
-
 
 export function getProdcts() {
   return products;
