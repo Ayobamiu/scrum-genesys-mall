@@ -13,14 +13,26 @@ class ProductsList extends Component {
       products,
     });
   }
+
+  findProduct = (text) => {
+    const filteredProducts = this.state.products.filter((product) =>
+      product.name.includes(text)
+    );
+
+    return filteredProducts;
+  };
+
   render() {
+    const filteredProducts = this.findProduct("Apple");
+
+    console.log(filteredProducts);
     return (
       <div className="product-products">
         <div className="product-products-heading">
           <strong>Categories >></strong> Laptops
         </div>
         <div className="product-products-list">
-          {this.state.products.map((product) => (
+          {filteredProducts.map((product) => (
             <Link
               to={`/product/${product.id}`}
               key={product.id}
