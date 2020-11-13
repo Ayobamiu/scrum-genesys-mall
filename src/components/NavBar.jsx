@@ -4,6 +4,10 @@ import Genesys from "../images/Genesys.png";
 
 class NavBar extends Component {
   state = {};
+  componentDidMount() {
+    document.getElementById('cartItems').textContent = Number(localStorage.getItem('ItemInCart'))
+
+  }
   render() {
     return (
       <div className="main-navbar">
@@ -23,6 +27,7 @@ class NavBar extends Component {
           <i className="fa fa-microphone main-navbar-search-icon"></i>
         </div>
         <NavLink to="/cart" className="main-navbar-item">
+        <span id="cartItems"></span>
           <i className="fa fa-shopping-cart"></i>
           <span className="main-navbar-item-sub-text">Cart</span>
         </NavLink>

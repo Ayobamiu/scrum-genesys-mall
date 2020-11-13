@@ -491,3 +491,6 @@ code {
   color: white;
   border: none;
 }
+#cartItems{
+  font-size: small;
+}
