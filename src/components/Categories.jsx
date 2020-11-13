@@ -25,7 +25,7 @@ class Categories extends Component {
   render() {
     return (
       <div className="product-categories">
-        <div className="product-categories-heading">Categories</div>
+        <div className="medium-heading">Categories</div>
         <div className="product-categories-list">
           {this.state.categories.map((category) => (
             <Link to='/product' key={category.id} className="product-categories-item" >

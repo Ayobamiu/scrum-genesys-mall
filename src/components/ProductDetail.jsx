@@ -73,14 +73,11 @@ class ProductDetail extends Component {
               </p>
             </div>
             <div className="product-details-page-sub-key-features-image">
-              <p className="product-details-page-main-details-view-more">
-                View more
+              <p className="product-details-page-sub-key-features-view-less">
+                View less
               </p>
-              <div className="product-details-page-main-button">
+              <div className="product-details-page-sub-key-features-button">
                 <i className="fa fa-shopping-cart"></i>
-                <p className="product-details-page-main-button-text">
-                  Add To Cart
-                </p>
               </div>
             </div>
           </div>
