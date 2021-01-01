@@ -1,6 +1,5 @@
 import React from "react";
 import { usePaystackPayment } from "react-paystack";
-import { Redirect } from "react-router-dom";
 
 const config = {
   reference: new Date().getTime(),
@@ -11,11 +10,14 @@ const config = {
 
 const onSuccess = (reference) => {
   // Implementation for whatever you want to do with reference and after success call.
-  {
-    /* <Redirect to='/thank-you'/>  */
-  }
-  return <Redirect to="/thank-you" />;
-  console.log(reference);
+  // {
+  /* <Redirect to='/thank-you'/>  */
+  // }
+  // return <Redirect to="/thank-you" />;
+  // console.log(reference);
+  setTimeout(() => {
+    window.location = "/thank-you";
+  }, 1000);
 };
 
 const onClose = () => {

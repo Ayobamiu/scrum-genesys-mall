@@ -1,47 +1,44 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import image_11 from "../images/image 11.png";
-import { getProdct, getProdcts } from "../services/ProductServices";
+import { getProdct } from "../services/ProductServices";
 
 class ProductDetail extends Component {
   state = {
     product: {},
-    cart: null  
+    cart: null,
   };
   componentDidMount() {
     const Id = this.props.match.params.id;
     const product = getProdct(Number(Id));
-    const cart = JSON.parse(localStorage.getItem('cart'))
+    const cart = JSON.parse(localStorage.getItem("cart"));
     this.setState({
       product,
-      cart
+      cart,
     });
     // this.cart = localStorage.get('cart')
   }
-  
-   addProductToCart = () => {
-     let currentCart = this.state.cart
-     currentCart.push(this.state.product.id)
-     localStorage.setItem('cart', JSON.stringify(currentCart));
-     this.updateCartIcon()
-   }
-  updateCartIcon = ()=>{
-    let itemNo = Number(localStorage.getItem('ItemInCart'));
+
+  addProductToCart = () => {
+    let currentCart = this.state.cart;
+    currentCart.push(this.state.product.id);
+    localStorage.setItem("cart", JSON.stringify(currentCart));
+    this.updateCartIcon();
+  };
+  updateCartIcon = () => {
+    let itemNo = Number(localStorage.getItem("ItemInCart"));
     // add 1 to no of itm
-    let noOfItemsInCart =  Number(itemNo) + 1;
+    let noOfItemsInCart = Number(itemNo) + 1;
     // update the dom
-    document.getElementById('cartItems').textContent = noOfItemsInCart
+    document.getElementById("cartItems").textContent = noOfItemsInCart;
     //set the local storage
-    localStorage.setItem('ItemInCart', noOfItemsInCart);
-  }
-  
+    localStorage.setItem("ItemInCart", noOfItemsInCart);
+  };
+
   render() {
-    
     const product = this.state.product;
     return (
       <div className="product-details-page">
         <div className="product-details-page-head">
-          <strong>Laptops >> </strong> {product.name}
+          <strong>Laptops &#62; &#62; </strong> {product.name}
         </div>
         <div className="product-details-page-main">
           <div className="product-details-page-main-image">
@@ -63,10 +60,13 @@ class ProductDetail extends Component {
                 View more
               </p>
             </div>
-            
+
             <div to="#" className="product-details-page-main-button">
               <i className="fa fa-shopping-cart"></i>
-              <p className="product-details-page-main-button-text" onClick={this.addProductToCart}>
+              <p
+                className="product-details-page-main-button-text"
+                onClick={this.addProductToCart}
+              >
                 Add To Cart
               </p>
             </div>
@@ -121,6 +121,5 @@ class ProductDetail extends Component {
     );
   }
 }
-
 
 export default ProductDetail;

@@ -17,7 +17,7 @@ class ProductsList extends Component {
     return (
       <div className="product-products">
         <div className="product-products-heading">
-          <strong>Categories >></strong> Laptops
+          <strong>Categories &#62;&#62;</strong> Laptops
         </div>
         <div className="product-products-list">
           {this.state.products.map((product) => (

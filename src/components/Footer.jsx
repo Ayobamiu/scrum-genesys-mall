@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Genesys from "../images/Genesys.png";
 
 class Footer extends Component {
   state = {};
